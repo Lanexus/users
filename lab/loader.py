@@ -4,9 +4,18 @@ DeepValidator V27 - Loader
 Decrypts and runs the encrypted main script
 """
 import os, sys, base64, tempfile, subprocess
-from cryptography.fernet import Fernet
-from cryptography.hazmat.primitives import hashes
-from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
+
+# Ensure cryptography is installed
+try:
+    from cryptography.fernet import Fernet
+    from cryptography.hazmat.primitives import hashes
+    from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
+except ImportError:
+    print("Installing cryptography...")
+    subprocess.check_call([sys.executable, '-m', 'pip', 'install', '--user', 'cryptography'])
+    from cryptography.fernet import Fernet
+    from cryptography.hazmat.primitives import hashes
+    from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 
 VERSION = "V27.0"
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
