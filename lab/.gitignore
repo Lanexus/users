@@ -1,0 +1,28 @@
+# Sensitive files
+deep_validator.db
+deep_validator.db-shm
+deep_validator.db-wal
+users.json
+*.pyc
+__pycache__/
+
+# Result files
+result/
+valid_ssh.txt
+restricted_ssh.txt
+res
+result.txt
+results.json
+domains_enum.json
+scan.log
+
+# Temp files
+test_*.py
+*.tmp
+*.log
+
+# Keep these
+!loader.py
+!encrypted.bin
+!README.md
+!url
